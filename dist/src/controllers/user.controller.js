@@ -12,14 +12,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = __importDefault(require("mongoose"));
-const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
+exports.getUsers = void 0;
+const user_model_1 = __importDefault(require("../models/user.model"));
+const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield mongoose_1.default.connect(process.env.MONGO_DB_URI);
-        console.log('Connected to DB');
+        const users = yield user_model_1.default.find().select('-password');
+        if (users) {
+            return res.json(users);
+        }
+        res.json({ error: 'No users found' });
     }
     catch (error) {
-        console.log('Error in connecting to DB: ', error.message);
+        console.log('Error in getUsers controller', error.message);
+        res.json({ error: 'Internal server error' });
     }
 });
-exports.default = connectDB;
+exports.getUsers = getUsers;

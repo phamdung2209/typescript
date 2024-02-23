@@ -12,14 +12,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = __importDefault(require("mongoose"));
-const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
+exports.signUp = void 0;
+const user_model_1 = __importDefault(require("../models/user.model"));
+const signUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield mongoose_1.default.connect(process.env.MONGO_DB_URI);
-        console.log('Connected to DB');
+        const { username, password } = req.body;
+        const user = yield user_model_1.default.findOne({ username });
+        if (user) {
+            return res.json({ error: 'Username already exists' });
+        }
+        const newUser = new user_model_1.default({
+            username,
+            password,
+        });
+        if (newUser) {
+            yield newUser.save();
+            return res.json({ message: 'User created successfully' });
+        }
+        return res.json({ error: 'Invalid user data' });
     }
     catch (error) {
-        console.log('Error in connecting to DB: ', error.message);
+        console.log('Error in signUp controller', error.message);
+        res.json({ error: 'Internal server error' });
     }
 });
-exports.default = connectDB;
+exports.signUp = signUp;
