@@ -9,10 +9,10 @@ export const getCourses = async (res: Response, req: Request) => {
             return res.json(course)
         }
 
-        res.json({ error: 'Not found courses' })
+        return res.json({ error: 'Not found courses' })
     } catch (error: any) {
         console.log('Error getCourses in controller: ', error.message)
-        res.json({ error: 'Internal server error' })
+        return res.json({ error: 'Internal server error' })
     }
 }
 
