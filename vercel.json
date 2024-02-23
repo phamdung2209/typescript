@@ -12,6 +12,6 @@
         }
     ],
     "env": {
-        "MONGO_DB_URI=mongodb+srv": "//phamdung2209:icMUlonAJnISCBXr@cluster0.k1crm31.mongodb.net/ts-app?retryWrites=true&w=majority&appName=Cluster0"
+        "MONGO_DB_URI=mongodb+srv": "mongodb+srv://phamdung2209:icMUlonAJnISCBXr@cluster0.k1crm31.mongodb.net/ts-app?retryWrites=true&w=majority&appName=Cluster0"
     }
 }
