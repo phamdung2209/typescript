@@ -1,7 +1,7 @@
 import Course from '../models/course.model'
 import { Response, Request } from 'express'
 
-export const getCourses = async (res: Response, req: Request) => {
+export const getCourses = async (req: Request, res: Response) => {
     try {
         const course = await Course.find()
 
@@ -16,7 +16,7 @@ export const getCourses = async (res: Response, req: Request) => {
     }
 }
 
-export const newCourse = async (res: Response, req: Request) => {
+export const newCourse = async (req: Request, res: Response) => {
     try {
         const { name, description } = req.body
 
