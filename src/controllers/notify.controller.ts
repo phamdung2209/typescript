@@ -6,7 +6,9 @@ export const getNotify = async (req: Request, res: Response) => {
         const { data, mac } = req.body as any
 
         const notify = await Notify.create({
-            data: data ?? 'No data',
+            method: data.method ?? 'No method',
+            orderId: data.orderId ?? 'No orderId',
+            appId: data.appId ?? 'No appId',
             mac: mac ?? 'No mac',
         })
 

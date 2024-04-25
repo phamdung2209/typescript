@@ -1,7 +1,13 @@
 import mongoose from 'mongoose'
 
 const notifySchema = new mongoose.Schema({
-    data: {
+    method: {
+        type: String,
+    },
+    orderId: {
+        type: String,
+    },
+    appId: {
         type: String,
     },
     mac: {
