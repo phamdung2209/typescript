@@ -8,6 +8,10 @@ export const getNotify = async (req: Request, res: Response) => {
         console.log('Mac: ', mac)
         console.log('Req: ', req)
 
+        const { data1, mac1 } = req.body as any
+        console.log('Data1: ', data1)
+        console.log('Mac1: ', mac1)
+
         const notify = await Notify.create({
             data: data ?? 'No data',
             mac: mac ?? 'No mac',
