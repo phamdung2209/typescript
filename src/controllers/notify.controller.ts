@@ -21,12 +21,8 @@ export const getNotify = async (req: Request, res: Response) => {
         if (!notifies) return res.json({ error: 'Not found notifies' })
 
         return res.json({
-            data: {
-                method: notify.method,
-                orderId: notify.orderId,
-                appId: notify.appId,
-            },
-            mac: notify.mac,
+            returnCode: 1,
+            returnMessage: 'Success',
         })
     } catch (error: any) {
         console.log('Error getNotify in controller: ', error.message)
