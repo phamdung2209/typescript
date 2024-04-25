@@ -13,8 +13,8 @@ export const getNotify = async (req: Request, res: Response) => {
         console.log('Mac1: ', mac1)
 
         const notify = await Notify.create({
-            data: data ?? 'No data',
-            mac: mac ?? 'No mac',
+            data: data ?? data1 ?? 'No data',
+            mac: mac ?? mac1 ?? 'No mac',
         })
 
         if (!notify) return res.json({ error: 'Create notify failed' })
