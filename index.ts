@@ -5,6 +5,7 @@ import connectDB from './src/config/connectDB'
 import authRoutes from './src/routes/auth.route'
 import userRoutes from './src/routes/user.route'
 import courseRoutes from './src/routes/course.route'
+import notifyRoutes from './src/routes/notify.route'
 
 const app = express()
 const POST = 8080
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/courses', courseRoutes)
+app.use('/api/notify', notifyRoutes)
 
 connectDB()
 

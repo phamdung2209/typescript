@@ -8,7 +8,6 @@ export const getCourses = async (req: Request, res: Response) => {
         if (course) {
             return res.json(course)
         }
-
         return res.json({ error: 'Not found courses' })
     } catch (error: any) {
         console.log('Error getCourses in controller: ', error.message)
