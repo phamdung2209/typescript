@@ -6,9 +6,10 @@ export const getNotify = async (req: Request, res: Response) => {
         const { data, mac } = req.body as any
 
         const notify = await Notify.create({
-            method: data.method ?? 'No method',
-            orderId: data.orderId ?? 'No orderId',
-            appId: data.appId ?? 'No appId',
+            // method: data.method ?? 'No method',
+            // orderId: data.orderId ?? 'No orderId',
+            // appId: data.appId ?? 'No appId',
+            data: data ?? 'No data',
             mac: mac ?? 'No mac',
         })
 
@@ -20,10 +21,7 @@ export const getNotify = async (req: Request, res: Response) => {
 
         if (!notifies) return res.json({ error: 'Not found notifies' })
 
-        return res.json({
-            data,
-            mac,
-        })
+        return res.json(notifies)
     } catch (error: any) {
         console.log('Error getNotify in controller: ', error.message)
         return res.json({ error: error.message })
