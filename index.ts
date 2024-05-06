@@ -11,7 +11,7 @@ import notifyRoutes from './src/routes/notify.route'
 import path, { join } from 'path'
 
 const app = express()
-const POST = 8080
+const PORT = 8080
 dotenv.config()
 app.use(cors())
 app.use(express.json())
@@ -30,6 +30,6 @@ app.use('/api/notify', notifyRoutes)
 
 connectDB()
 
-app.listen(POST, () => {
-    console.log(`Server is running at http://localhost:${POST}`)
+app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`)
 })
