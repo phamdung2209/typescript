@@ -8,6 +8,7 @@ import authRoutes from './src/routes/auth.route'
 import userRoutes from './src/routes/user.route'
 import courseRoutes from './src/routes/course.route'
 import notifyRoutes from './src/routes/notify.route'
+import path, { join } from 'path'
 
 const app = express()
 const POST = 8080
@@ -16,8 +17,10 @@ app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 
+const dirname = path.resolve()
+
 app.get('/', (req, res) => {
-    res.render('index.html')
+    res.sendFile(join(dirname + '/src/', 'index.html'))
 })
 
 app.use('/api/auth', authRoutes)
