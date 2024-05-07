@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv'
 import cors from 'cors'
@@ -8,6 +8,7 @@ import authRoutes from './src/routes/auth.route'
 import userRoutes from './src/routes/user.route'
 import courseRoutes from './src/routes/course.route'
 import notifyRoutes from './src/routes/notify.route'
+import hasuRoutes from './src/routes/hasu.route'
 import path, { join } from 'path'
 
 const app = express()
@@ -27,6 +28,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/courses', courseRoutes)
 app.use('/api/notify', notifyRoutes)
+app.use('/api/hasu/', hasuRoutes)
 
 connectDB()
 
