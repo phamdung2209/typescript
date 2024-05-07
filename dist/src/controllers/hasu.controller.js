@@ -15,11 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getProductsByCategory = void 0;
 const axios_1 = __importDefault(require("axios"));
 const getProductsByCategory = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a, _b, _c, _d;
+    var _a, _b;
     try {
         const { formData } = req.body;
         const data = yield axios_1.default.postForm('https://hasumart.com.vn/ajax/product/items', formData);
-        res.json(Object.assign(Object.assign({}, (_b = (_a = data.data) === null || _a === void 0 ? void 0 : _a.success) === null || _b === void 0 ? void 0 : _b.items), { total: (_d = (_c = data.data) === null || _c === void 0 ? void 0 : _c.success) === null || _d === void 0 ? void 0 : _d.total }));
+        res.json((_b = (_a = data.data) === null || _a === void 0 ? void 0 : _a.success) === null || _b === void 0 ? void 0 : _b.items);
     }
     catch (error) {
         console.log(error.message);
