@@ -35,6 +35,7 @@ const auth_route_1 = __importDefault(require("./src/routes/auth.route"));
 const user_route_1 = __importDefault(require("./src/routes/user.route"));
 const course_route_1 = __importDefault(require("./src/routes/course.route"));
 const notify_route_1 = __importDefault(require("./src/routes/notify.route"));
+const hasu_route_1 = __importDefault(require("./src/routes/hasu.route"));
 const path_1 = __importStar(require("path"));
 const app = (0, express_1.default)();
 const PORT = 8080;
@@ -50,6 +51,7 @@ app.use('/api/auth', auth_route_1.default);
 app.use('/api/users', user_route_1.default);
 app.use('/api/courses', course_route_1.default);
 app.use('/api/notify', notify_route_1.default);
+app.use('/api/hasu/', hasu_route_1.default);
 (0, connectDB_1.default)();
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);

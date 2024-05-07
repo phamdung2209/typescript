@@ -3,6 +3,6 @@ import { getProductsByCategory } from '../controllers/hasu.controller'
 
 const route = express.Router()
 
-route.get('/product-by-category', getProductsByCategory)
+route.post('/product-by-category', getProductsByCategory)
 
 export default route
