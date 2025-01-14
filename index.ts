@@ -25,12 +25,12 @@ app.get('/', (req, res) => {
     res.sendFile(join(dirname + '/src/', 'index.html'))
 })
 
+app.use('/api/instagram', instagramRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/courses', courseRoutes)
 app.use('/api/notify', notifyRoutes)
 app.use('/api/hasu/', hasuRoutes)
-app.use('/api/instagram', instagramRoutes)
 
 connectDB()
 
