@@ -30,7 +30,7 @@ app.use('/api/users', userRoutes)
 app.use('/api/courses', courseRoutes)
 app.use('/api/notify', notifyRoutes)
 app.use('/api/hasu/', hasuRoutes)
-app.use('/api/instagram/', instagramRoutes)
+app.use('/api/instagram', instagramRoutes)
 
 connectDB()
 
