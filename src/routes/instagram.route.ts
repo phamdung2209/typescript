@@ -1,5 +1,5 @@
 import express from 'express'
-import { getWebhook } from '~/controllers/instagram.controller'
+import { getWebhook } from '../controllers/instagram.controller'
 
 const router = express.Router()
 
