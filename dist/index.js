@@ -36,6 +36,7 @@ const user_route_1 = __importDefault(require("./src/routes/user.route"));
 const course_route_1 = __importDefault(require("./src/routes/course.route"));
 const notify_route_1 = __importDefault(require("./src/routes/notify.route"));
 const hasu_route_1 = __importDefault(require("./src/routes/hasu.route"));
+const instagram_route_1 = __importDefault(require("./src/routes/instagram.route"));
 const path_1 = __importStar(require("path"));
 const app = (0, express_1.default)();
 const PORT = 8080;
@@ -47,6 +48,7 @@ const dirname = path_1.default.resolve();
 app.get('/', (req, res) => {
     res.sendFile((0, path_1.join)(dirname + '/src/', 'index.html'));
 });
+app.use('/api/instagram', instagram_route_1.default);
 app.use('/api/auth', auth_route_1.default);
 app.use('/api/users', user_route_1.default);
 app.use('/api/courses', course_route_1.default);

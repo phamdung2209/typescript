@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     res.sendFile(join(dirname + '/src/', 'index.html'))
 })
 
-app.use('/api/webhook', instagramRoutes)
+app.use('/api/instagram', instagramRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/courses', courseRoutes)
