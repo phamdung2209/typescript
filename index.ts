@@ -9,6 +9,7 @@ import userRoutes from './src/routes/user.route'
 import courseRoutes from './src/routes/course.route'
 import notifyRoutes from './src/routes/notify.route'
 import hasuRoutes from './src/routes/hasu.route'
+import instagramRoutes from './src/routes/instagram.route'
 import path, { join } from 'path'
 
 const app = express()
@@ -29,6 +30,7 @@ app.use('/api/users', userRoutes)
 app.use('/api/courses', courseRoutes)
 app.use('/api/notify', notifyRoutes)
 app.use('/api/hasu/', hasuRoutes)
+app.use('/api/instagram/', instagramRoutes)
 
 connectDB()
 
