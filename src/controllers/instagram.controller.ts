@@ -4,7 +4,7 @@ export const getWebhook = async (req: Request, res: Response) => {
     try {
         console.log('res', res)
 
-        res.json({
+      return  res.json({
             message: 'Get from webhook instagram'
         })
     } catch (error: any) {
