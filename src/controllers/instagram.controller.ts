@@ -4,7 +4,7 @@ export const getWebhook = async (req: Request, res: Response) => {
     try {
         const hub = req.query
         
-        console.log('hub______', hub)
+        console.log('hub_____________>', hub)
 
         res.json(hub['hub.challenge'])
     } catch (error: any) {

@@ -12,10 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.testInsta = exports.getWebhook = void 0;
 const getWebhook = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log('res', res);
-        res.json({
-            message: 'Get from webhook instagram'
-        });
+        const hub = req.query;
+        console.log('hub_____________>', hub);
+        res.json(hub['hub.challenge']);
     }
     catch (error) {
         console.log('Error in getWebhook controller', error.message);
