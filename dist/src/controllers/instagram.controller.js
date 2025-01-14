@@ -25,8 +25,8 @@ const getWebhook = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 exports.getWebhook = getWebhook;
 const getinsta = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log('res', res);
-        res.json({ message: 'getinsta is running!' });
+        console.log('res___', req.body);
+        res.json(req.body);
     }
     catch (error) {
         console.log('Error in getinsta controller', error.message);
