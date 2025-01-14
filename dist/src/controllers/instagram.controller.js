@@ -25,7 +25,7 @@ const getWebhook = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 exports.getWebhook = getWebhook;
 const getinsta = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log('res___', req.body);
+        console.log('res___', req.body[0].changes[0]);
         res.json(req.body);
     }
     catch (error) {

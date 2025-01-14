@@ -16,7 +16,7 @@ export const getWebhook = async (req: Request, res: Response) => {
 
 export const getinsta = async (req: Request, res: Response) => {
     try {
-        console.log('res___', req.body)
+        console.log('res___', req.body[0].changes[0])
 
         res.json(req.body)
     } catch (error: any) {
