@@ -3,10 +3,8 @@ import { Request, Response } from "express";
 export const getWebhook = async (req: Request, res: Response) => {
     try {
         const hub = req.query
-
-        res.json({
-            message: 'Get from webhook instagram'
-        })
+        
+        console.log('hub______', hub)
 
         res.json(hub['hub.challenge'])
     } catch (error: any) {
