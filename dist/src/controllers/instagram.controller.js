@@ -14,7 +14,8 @@ const getWebhook = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     try {
         const hub = req.query;
         console.log('hub_____________>', hub);
-        res.json(hub['hub.challenge']);
+        console.log('hub.challenge_____________>', hub['hub.challenge']);
+        res.send(hub['hub.challenge']);
     }
     catch (error) {
         console.log('Error in getWebhook controller', error.message);
