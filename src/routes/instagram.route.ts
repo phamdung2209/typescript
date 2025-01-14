@@ -1,9 +1,9 @@
 import express from 'express'
-import { getWebhook, testInsta } from '../controllers/instagram.controller'
+import { getWebhook, getinsta } from '../controllers/instagram.controller'
 
 const router = express.Router()
 
 router.get('/webhook', getWebhook)
-router.get('/', testInsta)
+router.post('/webhook', getinsta)
 
 export default router

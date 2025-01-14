@@ -14,13 +14,13 @@ export const getWebhook = async (req: Request, res: Response) => {
     }
 }
 
-export const testInsta = async (req: Request, res: Response) => {
+export const getinsta = async (req: Request, res: Response) => {
     try {
         console.log('res', res)
 
-        res.json({message: 'Server is running!'})
+        res.json({message: 'getinsta is running!'})
     } catch (error: any) {
-        console.log('Error in getWebhook controller', error.message)
+        console.log('Error in getinsta controller', error.message)
         res.json({ error: 'Internal server error' })
     }
 }

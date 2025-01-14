@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.testInsta = exports.getWebhook = void 0;
+exports.getinsta = exports.getWebhook = void 0;
 const getWebhook = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const hub = req.query;
@@ -23,14 +23,14 @@ const getWebhook = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.getWebhook = getWebhook;
-const testInsta = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getinsta = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         console.log('res', res);
-        res.json({ message: 'Server is running!' });
+        res.json({ message: 'getinsta is running!' });
     }
     catch (error) {
-        console.log('Error in getWebhook controller', error.message);
+        console.log('Error in getinsta controller', error.message);
         res.json({ error: 'Internal server error' });
     }
 });
-exports.testInsta = testInsta;
+exports.getinsta = getinsta;

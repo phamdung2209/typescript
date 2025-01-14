@@ -7,5 +7,5 @@ const express_1 = __importDefault(require("express"));
 const instagram_controller_1 = require("../controllers/instagram.controller");
 const router = express_1.default.Router();
 router.get('/webhook', instagram_controller_1.getWebhook);
-router.get('/', instagram_controller_1.testInsta);
+router.post('/webhook', instagram_controller_1.getinsta);
 exports.default = router;
